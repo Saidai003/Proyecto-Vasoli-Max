@@ -23,7 +23,7 @@ const FormBuilder = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await fetch(`http://192.168.0.2:4000/api/auth/`);
+        const res = await fetch(`http://localhost:4000/api/auth/`);
         if (!res.ok) throw new Error('Usuarios no encontrados');
         const data = await res.json();
         setUserData(data);

@@ -18,7 +18,7 @@ const FormPreview = ({ formData }) => {
 
     const fetchForm = async () => {
       try {
-        const res = await fetch(`http://192.168.0.2:4000/api/auth/${usuario}`);
+        const res = await fetch(`http://localhost:4000/api/auth/${usuario}`);
         if (!res.ok) throw new Error('Usuario no encontrado');
         const data = await res.json();
 
@@ -466,7 +466,7 @@ const FormPreview = ({ formData }) => {
 
       console.log('Enviando respuestas:', payload);
 
-      const res = await fetch(`http://192.168.0.2:4000/api/respuestas`, {
+      const res = await fetch(`http://localhost:4000/api/respuestas`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),

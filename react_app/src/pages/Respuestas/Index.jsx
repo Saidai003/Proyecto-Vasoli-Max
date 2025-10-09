@@ -43,8 +43,8 @@ const RequestTracking = () => {
 
         // 1) Traer ambas colecciones en paralelo
         const [resResp, resForms] = await Promise.all([
-          fetch('http://192.168.0.2:4000/api/respuestas/'),
-          fetch('http://192.168.0.2:4000/api/forms/')
+          fetch('http://localhost:4000/api/respuestas/'),
+          fetch('http://localhost:4000/api/forms/')
         ]);
 
         if (!resResp.ok || !resForms.ok) {
@@ -234,7 +234,7 @@ const RequestTracking = () => {
 
     try {
       setIsLoading(true);
-      const res = await fetch(`http://192.168.0.2:4000/api/respuestas/${requestId}`, {
+      const res = await fetch(`http://localhost:4000/api/respuestas/${requestId}`, {
         method: 'DELETE',
       });
 
