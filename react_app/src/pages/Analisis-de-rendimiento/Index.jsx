@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import MainSidebar from '../../components/ui/MainSidebar';
-import NavigationHeader from '../../components/ui/NavigationHeader';
+import MainSidebar from '../../components/ui/Sidebar';
+import NavigationHeader from '../../components/ui/Header';
 import BreadcrumbTrail from '../../components/ui/BreadcrumbTrail';
 import AdvancedFilters from './components/AdvancedFilters';
 import TrendAnalysisChart from './components/TrendAnalysisChart';
