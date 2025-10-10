@@ -12,9 +12,9 @@ const Sidebar = ({ isCollapsed = false, onToggleCollapse, className = '' }) => {
     { name: 'Dashboard', path: '/dashboard-home', icon: 'LayoutDashboard', description: 'Pagina principal de admin' },
     { name: 'Gestiones', path: '/form-center', icon: 'FileText', description: 'Panel gestion de gestiones' },
     { name: 'Respuestas', path: '/RespuestasForms', icon: 'FileText', description: 'Gestionar respuestas de gestiones' },
-    { name: 'Seguimiento de Solicitudes', path: '/request-tracking', icon: 'Clock', description: 'Monitorear estado de solicitudes' },
-    { name: 'Centro de Operaciones', path: '/centro-operaciones', icon: 'HelpCircle', description: 'Conseguir ayuda y recuros' },
-    { name: 'Análisis de Rendimiento', path: '/analisis-rendimiento', icon: 'HelpCircle', description: 'Conseguir ayuda y recuros' },
+    { name: 'Seguimiento de Solicitudes', path: '/request-tracking', icon: 'BarChart3', description: 'Monitorear estado de solicitudes' },
+    { name: 'Centro de Operaciones', path: '/centro-operaciones', icon: 'Command', description: 'Conseguir ayuda y recuros' },
+    { name: 'Análisis de Rendimiento', path: '/analisis-rendimiento', icon: 'TrendingUp', description: 'Conseguir ayuda y recuros' },
     { name: 'Usuarios', path: '/users', icon: 'User', description: 'Gestion de empresas y Admins' },
     { name: 'Soporte', path: '/support-portal', icon: 'HelpCircle', description: 'Conseguir ayuda y recuros' },
     
