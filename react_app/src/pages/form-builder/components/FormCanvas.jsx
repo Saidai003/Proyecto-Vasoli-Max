@@ -30,7 +30,7 @@ const FormCanvas = ({
 
   return (
     <div className="max-w-2xl mx-auto">
-      {/* Encabezado del gestion */}
+      {/* Encabezado de la gestión */}
       <div 
         className="mb-8 p-6 rounded-lg border-2 border-dashed border-gray-300"
         style={{ borderColor: form?.primaryColor + '40' }}
@@ -59,7 +59,7 @@ const FormCanvas = ({
           )}
         </div>
       </div>
-      {/* Lista de tareas */}
+      {/* Lista de Tareas */}
       <div className="space-y-4">
         {form?.questions?.map((question, index) => (
           <div

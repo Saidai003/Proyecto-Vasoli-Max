@@ -120,7 +120,7 @@ const FormPreview = ({ formData }) => {
           Vista previa no disponible
         </h3>
         <p className="text-muted-foreground">
-          Completa las propiedades del gestion y agrega tareas para ver la vista previa
+          Completa las propiedades de la gestión y agrega Tareas para ver la vista previa
         </p>
       </div>
     );
@@ -135,7 +135,7 @@ const FormPreview = ({ formData }) => {
         </div>
         <div>
           <h3 className="text-lg font-semibold text-foreground">
-            Vista Previa del gestion
+            Vista Previa de la gestión
           </h3>
           <p className="text-sm text-muted-foreground">
             Así se verá tu gestion para los usuarios
@@ -154,7 +154,7 @@ const FormPreview = ({ formData }) => {
           {/* Form Header */}
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-black mb-2">
-              {formData?.title || 'Título del gestion'}
+              {formData?.title || 'Título de la gestión'}
             </h1>
             
             <div className="flex items-center justify-center space-x-6 text-sm text-gray-600 mb-4">
@@ -188,7 +188,7 @@ const FormPreview = ({ formData }) => {
             )}
           </div>
 
-          {/* Form Questions - MOSTRAR tareas DEL NIVEL 0 NORMALMENTE */}
+          {/* Form Questions - MOSTRAR Tareas DEL NIVEL 0 NORMALMENTE */}
           {formData?.questions?.length > 0 ? (
             <div className="space-y-8">
               {formData?.questions?.map((question, index) => (
@@ -259,10 +259,10 @@ const FormPreview = ({ formData }) => {
                 <Icon name="FileText" size={24} className="text-gray-400" />
               </div>
               <h3 className="text-lg font-medium text-black mb-2">
-                Sin tareas aún
+                Sin Tareas aún
               </h3>
               <p className="text-gray-600">
-                Agrega tareas en la pestaña "tareas" para verlas aquí
+                Agrega Tareas en la pestaña "tareas" para verlas aquí
               </p>
             </div>
           )}

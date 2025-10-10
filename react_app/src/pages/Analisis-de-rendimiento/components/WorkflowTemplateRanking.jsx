@@ -160,7 +160,7 @@ const WorkflowTemplateRanking = ({ onTemplateSelect }) => {
               <div className="flex items-center space-x-4 text-sm text-text-secondary">
                 <span>{template?.category}</span>
                 <span>•</span>
-                <span>{template?.totalTasks} tareas</span>
+                <span>{template?.totalTasks} Tareas</span>
                 <span>•</span>
                 <span>{template?.avgCycleTime} días promedio</span>
               </div>
@@ -247,7 +247,7 @@ const WorkflowTemplateRanking = ({ onTemplateSelect }) => {
           </div>
           
           <div className="flex items-center justify-between text-xs text-text-secondary">
-            <span>{template?.totalTasks} tareas</span>
+            <span>{template?.totalTasks} Tareas</span>
             <span>{template?.avgCycleTime} días</span>
             {template?.bottlenecks > 0 && (
               <span className="text-warning">{template?.bottlenecks} cuellos</span>

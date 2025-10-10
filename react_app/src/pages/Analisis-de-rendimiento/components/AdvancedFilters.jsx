@@ -211,12 +211,12 @@ const AdvancedFilters = ({ filters, onFilterChange, onBookmark, bookmarks = [] }
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <Checkbox
-                label="Solo tareas vencidas"
+                label="Solo Tareas vencidas"
                 checked={filters?.overdue || false}
                 onChange={(e) => handleFilterChange('overdue', e?.target?.checked)}
               />
               <Checkbox
-                label="Incluir tareas archivadas"
+                label="Incluir Tareas archivadas"
                 checked={filters?.includeArchived || false}
                 onChange={(e) => handleFilterChange('includeArchived', e?.target?.checked)}
               />

@@ -220,7 +220,7 @@ const FormProperties = ({ formData, categories, sections, onUpdateFormData }) =>
               Información Básica
             </h3>
             <p className="text-sm text-muted-foreground">
-              Configura los detalles principales del gestion
+              Configura los detalles principales de la gestión
             </p>
           </div>
         </div>
@@ -229,7 +229,7 @@ const FormProperties = ({ formData, categories, sections, onUpdateFormData }) =>
           {/* INPUT DE TÍTULO CON VALIDACIÓN MEJORADA */}
           <div className="space-y-2">
             <label className="text-sm font-medium text-foreground">
-              Título del gestion <span className="text-destructive">*</span>
+              Título de la gestión <span className="text-destructive">*</span>
               <span className="text-xs text-muted-foreground ml-2">
                 ({formData?.title?.length || 0}/50 caracteres)
               </span>
@@ -252,7 +252,7 @@ const FormProperties = ({ formData, categories, sections, onUpdateFormData }) =>
               </p>
             )}
             <p className="text-sm text-muted-foreground">
-              Este será el nombre visible del gestion
+              Este será el nombre visible de la gestión
             </p>
           </div>
 
@@ -324,7 +324,7 @@ const FormProperties = ({ formData, categories, sections, onUpdateFormData }) =>
               ))}
             </select>
             <p className="text-sm text-muted-foreground">
-              Define la categoría del gestion
+              Define la categoría de la gestión
             </p>
           </div>
 
@@ -362,7 +362,7 @@ const FormProperties = ({ formData, categories, sections, onUpdateFormData }) =>
           </div>
           <div>
             <h3 className="text-lg font-semibold text-foreground">
-              Icono del gestion
+              Icono de la gestión
             </h3>
             <p className="text-sm text-muted-foreground">
               Selecciona un icono para identificar el gestion
@@ -406,7 +406,7 @@ const FormProperties = ({ formData, categories, sections, onUpdateFormData }) =>
               Personalización de Colores
             </h3>
             <p className="text-sm text-muted-foreground">
-              Define la apariencia visual del gestion
+              Define la apariencia visual de la gestión
             </p>
           </div>
         </div>

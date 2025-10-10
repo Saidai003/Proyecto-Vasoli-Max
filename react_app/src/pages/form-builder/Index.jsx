@@ -206,13 +206,13 @@ const FormBuilder = () => {
       return;
     }
 
-    // Validación adicional de títulos de tareas
+    // Validación adicional de títulos de Tareas
     const hasLongQuestionTitles = formData.questions.some(
       q => (q.title?.length || 0) > 50
     );
 
     if (hasLongQuestionTitles) {
-      alert('Una o más tareas tienen títulos que exceden los 50 caracteres');
+      alert('Una o más Tareas tienen títulos que exceden los 50 caracteres');
       return;
     }
 
@@ -371,8 +371,8 @@ const FormBuilder = () => {
                 </h1>
                 <p className="text-muted-foreground">
                   {formData?.id
-                    ? 'Modifica tu gestion existente y administra las tareas'
-                    : 'Diseña una gestion personalizado con tareas dinámicas'
+                    ? 'Modifica tu gestion existente y administra las Tareas'
+                    : 'Diseña una gestion personalizado con Tareas dinámicas'
                   }
                 </p>
               </div>

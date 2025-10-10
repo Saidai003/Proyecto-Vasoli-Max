@@ -112,7 +112,7 @@ const WorkflowFunnelVisualization = ({ onStageClick }) => {
       <div className="flex items-center justify-between mb-6">
         <div>
           <h3 className="text-lg font-semibold text-text-primary">Embudo de Flujo de Trabajo</h3>
-          <p className="text-sm text-text-secondary">Progresión de tareas por etapas con análisis de conversión</p>
+          <p className="text-sm text-text-secondary">Progresión de Tareas por etapas con análisis de conversión</p>
         </div>
         
         <div className="flex items-center space-x-3">
@@ -239,7 +239,7 @@ const WorkflowFunnelVisualization = ({ onStageClick }) => {
             <div key={index} className="flex items-center justify-between p-3 bg-surface rounded border border-border">
               <div>
                 <div className="font-medium text-text-primary text-sm">{stage?.stage}</div>
-                <div className="text-xs text-text-secondary">{stage?.count} tareas</div>
+                <div className="text-xs text-text-secondary">{stage?.count} Tareas</div>
               </div>
               <div className="text-right">
                 <div className={`text-sm font-medium ${getBottleneckTextColor(stage?.bottleneckRisk)}`}>

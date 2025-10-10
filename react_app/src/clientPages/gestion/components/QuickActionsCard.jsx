@@ -112,7 +112,7 @@ const FormPreview = ({ formData }) => {
     });
   };
 
-  // Función recursiva para validar tareas y subsecciones - INTERNAMENTE USA IDs
+  // Función recursiva para validar Tareas y subsecciones - INTERNAMENTE USA IDs
   const validateQuestions = (questions, answers, parentPath = '') => {
     const errors = {};
 
@@ -144,7 +144,7 @@ const FormPreview = ({ formData }) => {
                 : false;
 
           if (shouldValidateSubsection) {
-            // Validar recursivamente las tareas de la subsección
+            // Validar recursivamente las Tareas de la subsección
             const subErrors = validateQuestions(option.subformQuestions, answers, questionPath);
             Object.assign(errors, subErrors);
           }
@@ -182,7 +182,7 @@ const FormPreview = ({ formData }) => {
                 : false;
 
           if (shouldProcessSubsection) {
-            // Mapear recursivamente las tareas de la subsección
+            // Mapear recursivamente las Tareas de la subsección
             mapAnswersToTitles(option.subformQuestions, answers, mappedAnswers);
           }
         }
@@ -196,7 +196,7 @@ const FormPreview = ({ formData }) => {
   const validateForm = () => {
     let newErrors = {};
 
-    // Validar tareas principales y subsecciones recursivamente
+    // Validar Tareas principales y subsecciones recursivamente
     newErrors = validateQuestions(formData?.questions || [], answers);
 
     // EL CAMPO RESPALDO YA NO ES OBLIGATORIO
@@ -499,7 +499,7 @@ const FormPreview = ({ formData }) => {
           Vista previa no disponible
         </h3>
         <p className="text-gray-600">
-          Completa las propiedades del gestion y agrega tareas para ver la vista previa
+          Completa las propiedades de la gestión y agrega Tareas para ver la vista previa
         </p>
       </div>
     );
@@ -515,10 +515,10 @@ const FormPreview = ({ formData }) => {
             backgroundColor: formData?.secondaryColor || '#F3F4F6',
           }}
         >
-          {/* Cabecera del gestion */}
+          {/* Cabecera de la gestión */}
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-black mb-2">
-              {formData?.title || 'Título del gestion'}
+              {formData?.title || 'Título de la gestión'}
             </h1>
 
             <div className="flex items-center justify-center space-x-6 text-sm text-gray-600 mb-4">
@@ -554,7 +554,7 @@ const FormPreview = ({ formData }) => {
             )}
           </div>
 
-          {/* tareas y subsecciones recursivas - VISUAL ORIGINAL */}
+          {/* Tareas y subsecciones recursivas - VISUAL ORIGINAL */}
           <div className="space-y-6">
             {formData?.questions?.map((question, index) =>
               renderQuestion(question, index, true)

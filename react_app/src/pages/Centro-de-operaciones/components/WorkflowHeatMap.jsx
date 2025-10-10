@@ -154,7 +154,7 @@ const WorkflowHeatMap = ({ onDrillDown = () => {} }) => {
                       {stage?.value}%
                     </div>
                     <div className="text-xs text-white opacity-90">
-                      {stage?.tasks} tareas
+                      {stage?.tasks} Tareas
                     </div>
                   </div>
                 </div>

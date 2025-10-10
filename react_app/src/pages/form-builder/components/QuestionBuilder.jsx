@@ -425,7 +425,7 @@ const QuestionBuilder = ({
 
                           {option.subformQuestions.length === 0 && (
                             <div className="text-center py-4 text-sm text-blue-600 bg-blue-50 rounded">
-                              No hay tareas en esta subsección
+                              No hay Tareas en esta subsección
                             </div>
                           )}
                         </div>
@@ -657,10 +657,10 @@ const QuestionBuilder = ({
           </div>
           <div>
             <h3 className="text-lg font-semibold text-foreground">
-              Constructor de tareas
+              Constructor de Tareas
             </h3>
             <p className="text-sm text-muted-foreground">
-              Agrega y configura las tareas de tu gestion
+              Agrega y configura las Tareas de tu gestion
             </p>
           </div>
         </div>
@@ -688,7 +688,7 @@ const QuestionBuilder = ({
             <Icon name="HelpCircle" size={24} className="text-muted-foreground" />
           </div>
           <h3 className="text-lg font-medium text-foreground mb-2">
-            No hay tareas aún
+            No hay Tareas aún
           </h3>
           <p className="text-muted-foreground mb-4">
             Comienza agregando tu primera tarea al gestion
