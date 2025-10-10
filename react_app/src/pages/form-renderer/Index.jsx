@@ -100,7 +100,7 @@ const FormRenderer = () => {
       setIsSubmitted(true);
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('Error al enviar el formulario. Por favor intenta de nuevo.');
+      alert('Error al enviar el gestion. Por favor intenta de nuevo.');
     } finally {
       setIsSubmitting(false);
     }
@@ -225,7 +225,7 @@ const FormRenderer = () => {
           <div className="flex items-center justify-center h-96">
             <div className="text-center">
               <div className="animate-spin w-8 h-8 border-4 border-primary border-t-transparent rounded-full mx-auto mb-4"></div>
-              <p className="text-muted-foreground">Cargando formulario...</p>
+              <p className="text-muted-foreground">Cargando gestion...</p>
             </div>
           </div>
         </main>
@@ -246,17 +246,17 @@ const FormRenderer = () => {
                 <Icon name="AlertCircle" size={24} className="text-red-600" />
               </div>
               <h1 className="text-2xl font-bold text-foreground mb-2">
-                Formulario no encontrado
+                gestion no encontrado
               </h1>
               <p className="text-muted-foreground mb-6">
-                El formulario que estás buscando no existe o no está publicado.
+                El gestion que estás buscando no existe o no está publicado.
               </p>
               <Button
                 onClick={() => window.location.href = '/form-center'}
                 iconName="ArrowLeft"
                 iconPosition="left"
               >
-                Volver al Centro de Formularios
+                Volver al Centro de gestiones
               </Button>
             </div>
           </div>
@@ -277,7 +277,7 @@ const FormRenderer = () => {
                 <Icon name="CheckCircle" size={24} className="text-green-600" />
               </div>
               <h1 className="text-2xl font-bold text-foreground mb-2">
-                ¡Formulario enviado exitosamente!
+                ¡gestion enviado exitosamente!
               </h1>
               <p className="text-muted-foreground mb-6">
                 Gracias por completar "{formData?.title}". 
@@ -327,7 +327,7 @@ const FormRenderer = () => {
                 iconName="ArrowLeft"
                 iconPosition="left"
               >
-                Volver al Centro de Formularios
+                Volver al Centro de gestiones
               </Button>
             </div>
 
@@ -435,7 +435,7 @@ const FormRenderer = () => {
                         style={{ backgroundColor: formData?.primaryColor || '#3B82F6' }}
                         className="text-white hover:opacity-90"
                       >
-                        {isSubmitting ? 'Enviando...' : 'Enviar Formulario'}
+                        {isSubmitting ? 'Enviando...' : 'Enviar gestion'}
                       </Button>
                     </div>
                   </div>

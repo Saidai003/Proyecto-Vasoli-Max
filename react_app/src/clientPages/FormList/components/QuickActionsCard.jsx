@@ -41,7 +41,7 @@ const QuickActionsCard = ({ section }) => {
           
           setAllForms(normalizedForms);
         } catch (err) {
-          console.error('Error cargando formularios:', err);
+          console.error('Error cargando gestiones:', err);
         } finally {
           setIsLoading(false);
         }
@@ -60,7 +60,7 @@ const QuickActionsCard = ({ section }) => {
       <div className="p-6 border-b border-border">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-xl font-semibold text-foreground">Formularios remuneraciones</h2>
+            <h2 className="text-xl font-semibold text-foreground">gestiones remuneraciones</h2>
             <p className="text-sm text-muted-foreground mt-1">
             </p>
           </div>

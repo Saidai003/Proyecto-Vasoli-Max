@@ -59,7 +59,7 @@ const RequestDetails = ({ request, isVisible, onClose }) => {
     },
     {
       id: 2,
-      name: "Formulario_Solicitud.docx",
+      name: "gestion_Solicitud.docx",
       size: "128 KB",
       type: "docx",
       uploadedAt: "2025-01-18T09:32:00Z"

@@ -192,7 +192,7 @@ const FormPreview = ({ formData }) => {
     return mappedAnswers;
   };
 
-  // Validar formulario antes de enviar
+  // Validar gestion antes de enviar
   const validateForm = () => {
     let newErrors = {};
 
@@ -433,7 +433,7 @@ const FormPreview = ({ formData }) => {
     );
   };
 
-  // Enviar formulario al endpoint de tu API
+  // Enviar gestion al endpoint de tu API
   const handleSubmit = async () => {
     // Validar antes de enviar
     if (!validateForm()) {
@@ -478,7 +478,7 @@ const FormPreview = ({ formData }) => {
       alert('Respuestas enviadas con éxito');
       console.log('Respuestas guardadas:', data);
 
-      // Limpia el formulario
+      // Limpia el gestion
       setAnswers({});
       setRespaldo("");
       setErrors({});
@@ -499,7 +499,7 @@ const FormPreview = ({ formData }) => {
           Vista previa no disponible
         </h3>
         <p className="text-gray-600">
-          Completa las propiedades del formulario y agrega preguntas para ver la vista previa
+          Completa las propiedades del gestion y agrega preguntas para ver la vista previa
         </p>
       </div>
     );
@@ -515,10 +515,10 @@ const FormPreview = ({ formData }) => {
             backgroundColor: formData?.secondaryColor || '#F3F4F6',
           }}
         >
-          {/* Cabecera del formulario */}
+          {/* Cabecera del gestion */}
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-black mb-2">
-              {formData?.title || 'Título del Formulario'}
+              {formData?.title || 'Título del gestion'}
             </h1>
 
             <div className="flex items-center justify-center space-x-6 text-sm text-gray-600 mb-4">
@@ -626,7 +626,7 @@ const FormPreview = ({ formData }) => {
                     }}
                     className="px-6 py-3 rounded-md font-medium text-white hover:opacity-90 transition-opacity"
                   >
-                    Enviar Formulario
+                    Enviar gestion
                   </button>
                 </div>
               </div>

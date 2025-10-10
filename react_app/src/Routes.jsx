@@ -18,7 +18,7 @@ import Operationcenter from './pages/Centro-de-operaciones/Index.jsx';
 import PerformanceAnalytics from './pages/Analisis-de-rendimiento/Index.jsx';
 import Home from './clientPages/home/Index.jsx';
 import FormList from './clientPages/FormList/Index.jsx';
-import Form from './clientPages/formulario/Index.jsx';
+import Form from './clientPages/gestion/Index.jsx';
 
 
 

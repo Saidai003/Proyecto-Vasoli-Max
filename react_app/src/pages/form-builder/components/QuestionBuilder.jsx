@@ -660,7 +660,7 @@ const QuestionBuilder = ({
               Constructor de Preguntas
             </h3>
             <p className="text-sm text-muted-foreground">
-              Agrega y configura las preguntas de tu formulario
+              Agrega y configura las preguntas de tu gestion
             </p>
           </div>
         </div>
@@ -691,7 +691,7 @@ const QuestionBuilder = ({
             No hay preguntas aún
           </h3>
           <p className="text-muted-foreground mb-4">
-            Comienza agregando tu primera pregunta al formulario
+            Comienza agregando tu primera pregunta al gestion
           </p>
           <Button
             onClick={() => {

@@ -120,7 +120,7 @@ const FormPreview = ({ formData }) => {
           Vista previa no disponible
         </h3>
         <p className="text-muted-foreground">
-          Completa las propiedades del formulario y agrega preguntas para ver la vista previa
+          Completa las propiedades del gestion y agrega preguntas para ver la vista previa
         </p>
       </div>
     );
@@ -135,10 +135,10 @@ const FormPreview = ({ formData }) => {
         </div>
         <div>
           <h3 className="text-lg font-semibold text-foreground">
-            Vista Previa del Formulario
+            Vista Previa del gestion
           </h3>
           <p className="text-sm text-muted-foreground">
-            Así se verá tu formulario para los usuarios
+            Así se verá tu gestion para los usuarios
           </p>
         </div>
       </div>
@@ -154,7 +154,7 @@ const FormPreview = ({ formData }) => {
           {/* Form Header */}
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-black mb-2">
-              {formData?.title || 'Título del Formulario'}
+              {formData?.title || 'Título del gestion'}
             </h1>
             
             <div className="flex items-center justify-center space-x-6 text-sm text-gray-600 mb-4">
@@ -247,7 +247,7 @@ const FormPreview = ({ formData }) => {
                       className="px-6 py-3 rounded-md font-medium text-white hover:opacity-90 transition-opacity"
                       disabled
                     >
-                      Enviar Formulario
+                      Enviar gestion
                     </button>
                   </div>
                 </div>
@@ -276,9 +276,9 @@ const FormPreview = ({ formData }) => {
           <div className="text-sm text-yellow-800">
             <p className="font-medium mb-1">Nota sobre la vista previa</p>
             <p>
-              Esta es una representación visual de cómo se verá tu formulario. 
+              Esta es una representación visual de cómo se verá tu gestion. 
               Los campos están deshabilitados en la vista previa. Una vez publicado, 
-              los usuarios podrán interactuar completamente con el formulario.
+              los usuarios podrán interactuar completamente con el gestion.
             </p>
           </div>
         </div>

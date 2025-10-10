@@ -8,7 +8,7 @@ const NotificationsCard = () => {
       id: 1,
       type: 'reminder',
       title: 'Recordatorio: Evaluación de Desempeño',
-      message: 'Tu evaluación anual vence el 15 de enero. Completa el formulario antes de la fecha límite.',
+      message: 'Tu evaluación anual vence el 15 de enero. Completa el gestion antes de la fecha límite.',
       timestamp: new Date(Date.now() - 30 * 60 * 1000), // 30 minutes ago
       isRead: false,
       priority: 'high',

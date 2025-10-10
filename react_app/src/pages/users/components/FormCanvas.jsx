@@ -18,7 +18,7 @@ const FormCanvas = ({
             <Plus size={32} className="text-gray-400" />
           </div>
           <h3 className="text-lg font-medium text-gray-900 mb-2">
-            Comienza creando tu formulario
+            Comienza creando tu gestion
           </h3>
           <p className="text-gray-600 mb-4">
             Selecciona un tipo de pregunta del panel izquierdo para empezar
@@ -30,7 +30,7 @@ const FormCanvas = ({
 
   return (
     <div className="max-w-2xl mx-auto">
-      {/* Encabezado del formulario */}
+      {/* Encabezado del gestion */}
       <div 
         className="mb-8 p-6 rounded-lg border-2 border-dashed border-gray-300"
         style={{ borderColor: form?.primaryColor + '40' }}

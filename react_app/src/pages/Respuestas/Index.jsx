@@ -53,7 +53,7 @@ const RequestTracking = () => {
 
         // 2) Convertir a JSON
         const responses = await resResp.json(); // lista de respuestas
-        const forms = await resForms.json();    // lista de formularios
+        const forms = await resForms.json();    // lista de gestiones
 
         // 3) Construir mapa de forms para lookup rápido (mapeamos _id e id si existen)
         const formsMap = new Map();
@@ -91,11 +91,11 @@ const RequestTracking = () => {
         });
 
         // 5) Actualizar estados
-        setAllForms(forms);    // lista de formularios tal cual vino del backend
+        setAllForms(forms);    // lista de gestiones tal cual vino del backend
         setResp(normalized);   // respuestas ya unidas con su form
 
       } catch (err) {
-        console.error('Error cargando formularios:', err);
+        console.error('Error cargando gestiones:', err);
       } finally {
         setIsLoading(false);
       }

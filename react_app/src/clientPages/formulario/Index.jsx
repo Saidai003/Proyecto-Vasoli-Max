@@ -30,7 +30,7 @@ const DashboardHome = () => {
       const fetchForm = async () => {
         try {
           const res = await fetch(`http://localhost:4000/api/forms/${formId}`);
-          if (!res.ok) throw new Error('Formulario no encontrado');
+          if (!res.ok) throw new Error('gestion no encontrado');
           const data = await res.json();
   
           // Normalización corregida - incluyendo section
@@ -51,8 +51,8 @@ const DashboardHome = () => {
   
           setFormData(normalizedForm);
         } catch (err) {
-          console.error('Error cargando el formulario:', err);
-          alert('No se pudo cargar el formulario');
+          console.error('Error cargando el gestion:', err);
+          alert('No se pudo cargar el gestion');
         }
       };
   

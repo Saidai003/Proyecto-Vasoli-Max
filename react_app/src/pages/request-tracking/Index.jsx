@@ -123,7 +123,7 @@ const RequestTracking = () => {
       assignedTo: "Beneficios",
       dueDate: "2025-01-30T17:00:00Z",
       hasMessages: false,
-      details: `Solicito mi inscripción en el plan de seguro médico complementario ofrecido por la empresa.\n\nPlan solicitado: Plan Familiar Premium\nBeneficiarios: Cónyuge e hijo menor\n\nAdjunto formularios completados y documentos requeridos.`
+      details: `Solicito mi inscripción en el plan de seguro médico complementario ofrecido por la empresa.\n\nPlan solicitado: Plan Familiar Premium\nBeneficiarios: Cónyuge e hijo menor\n\nAdjunto gestiones completados y documentos requeridos.`
     }
   ];
 

@@ -19,10 +19,10 @@ const FormPropertiesPanel = ({
         </h2>
       </div>
       <div className="flex-1 overflow-y-auto p-4 space-y-6">
-        {/* Propiedades del formulario */}
+        {/* Propiedades del gestion */}
         <div>
           <h3 className="text-sm font-medium text-gray-900 mb-3">
-            Información del Formulario
+            Información del gestion
           </h3>
           <div className="space-y-4">
             <div>

@@ -17,7 +17,7 @@ const Header = ({ className = '' }) => {
   const navigationItems = [
     { name: 'Incio', path: '/', icon: 'Home' },
     { name: 'Dashboard', path: '/dashboard-home', icon: 'LayoutDashboard' },
-    { name: 'Formularios', path: '/form-center', icon: 'FileText' },
+    { name: 'Gestiones', path: '/form-center', icon: 'FileText' },
     { name: 'Remuneraciones', path: '/request-tracking', icon: 'Clock' },
     { name: 'Soporte', path: '/support-portal', icon: 'HelpCircle' },
 

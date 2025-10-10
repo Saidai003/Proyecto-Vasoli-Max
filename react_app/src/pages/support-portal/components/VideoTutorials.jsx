@@ -8,7 +8,7 @@ const VideoTutorials = () => {
   const categories = [
     { id: 'all', name: 'Todos', icon: 'Grid3X3' },
     { id: 'getting-started', name: 'Primeros Pasos', icon: 'Play' },
-    { id: 'forms', name: 'Formularios', icon: 'FileText' },
+    { id: 'forms', name: 'Gestiones', icon: 'FileText' },
     { id: 'payroll', name: 'Nómina', icon: 'DollarSign' },
     { id: 'benefits', name: 'Beneficios', icon: 'Heart' }
   ];

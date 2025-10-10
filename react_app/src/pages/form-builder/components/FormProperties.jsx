@@ -220,7 +220,7 @@ const FormProperties = ({ formData, categories, sections, onUpdateFormData }) =>
               Información Básica
             </h3>
             <p className="text-sm text-muted-foreground">
-              Configura los detalles principales del formulario
+              Configura los detalles principales del gestion
             </p>
           </div>
         </div>
@@ -229,7 +229,7 @@ const FormProperties = ({ formData, categories, sections, onUpdateFormData }) =>
           {/* INPUT DE TÍTULO CON VALIDACIÓN MEJORADA */}
           <div className="space-y-2">
             <label className="text-sm font-medium text-foreground">
-              Título del Formulario <span className="text-destructive">*</span>
+              Título del gestion <span className="text-destructive">*</span>
               <span className="text-xs text-muted-foreground ml-2">
                 ({formData?.title?.length || 0}/50 caracteres)
               </span>
@@ -252,7 +252,7 @@ const FormProperties = ({ formData, categories, sections, onUpdateFormData }) =>
               </p>
             )}
             <p className="text-sm text-muted-foreground">
-              Este será el nombre visible del formulario
+              Este será el nombre visible del gestion
             </p>
           </div>
 
@@ -273,7 +273,7 @@ const FormProperties = ({ formData, categories, sections, onUpdateFormData }) =>
               ))}
             </select>
             <p className="text-sm text-muted-foreground">
-              Tiempo promedio que tomará completar el formulario
+              Tiempo promedio que tomará completar el gestion
             </p>
           </div>
           
@@ -294,7 +294,7 @@ const FormProperties = ({ formData, categories, sections, onUpdateFormData }) =>
               ))}
             </select>
             <p className="text-sm text-muted-foreground">
-              Define la sección en la que se verá el formulario
+              Define la sección en la que se verá el gestion
             </p>
           </div>
 
@@ -302,7 +302,7 @@ const FormProperties = ({ formData, categories, sections, onUpdateFormData }) =>
             label="Autor"
             value={formData?.author}
             onChange={(e) => onUpdateFormData('author', e?.target?.value)}
-            description="Nombre de quien creó el formulario"
+            description="Nombre de quien creó el gestion"
             disabled
           />
 
@@ -324,7 +324,7 @@ const FormProperties = ({ formData, categories, sections, onUpdateFormData }) =>
               ))}
             </select>
             <p className="text-sm text-muted-foreground">
-              Define la categoría del formulario
+              Define la categoría del gestion
             </p>
           </div>
 
@@ -340,7 +340,7 @@ const FormProperties = ({ formData, categories, sections, onUpdateFormData }) =>
               placeholder="Selecciona las empresas asociadas"
             />
             <p className="text-sm text-muted-foreground">
-              Selecciona las empresas que podrán ver este formulario
+              Selecciona las empresas que podrán ver este gestion
             </p>
             {(formData?.companies || []).length > 0 && (
               <div className="mt-2">
@@ -362,10 +362,10 @@ const FormProperties = ({ formData, categories, sections, onUpdateFormData }) =>
           </div>
           <div>
             <h3 className="text-lg font-semibold text-foreground">
-              Icono del Formulario
+              Icono del gestion
             </h3>
             <p className="text-sm text-muted-foreground">
-              Selecciona un icono para identificar el formulario
+              Selecciona un icono para identificar el gestion
             </p>
           </div>
         </div>
@@ -406,7 +406,7 @@ const FormProperties = ({ formData, categories, sections, onUpdateFormData }) =>
               Personalización de Colores
             </h3>
             <p className="text-sm text-muted-foreground">
-              Define la apariencia visual del formulario
+              Define la apariencia visual del gestion
             </p>
           </div>
         </div>
@@ -493,7 +493,7 @@ const FormProperties = ({ formData, categories, sections, onUpdateFormData }) =>
             style={{ backgroundColor: formData?.secondaryColor }}
           >
             <div className="space-y-4">
-              <h5 className="font-semibold text-foreground">Ejemplo de Formulario</h5>
+              <h5 className="font-semibold text-foreground">Ejemplo de gestion</h5>
               <div className="space-y-3">
                 <div className="space-y-1">
                   <label className="text-sm font-medium text-foreground">

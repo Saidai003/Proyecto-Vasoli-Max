@@ -34,7 +34,7 @@ const CommunityForum = () => {
     },
     {
       id: 2,
-      title: "Problema con la carga de documentos en formularios",
+      title: "Problema con la carga de documentos en gestiones",
       content: "Algunos usuarios reportan dificultades al subir archivos PDF...",
       author: {
         name: "Carlos Ruiz",
@@ -66,7 +66,7 @@ const CommunityForum = () => {
     },
     {
       id: 4,
-      title: "Tip: Cómo llenar correctamente el formulario de gastos",
+      title: "Tip: Cómo llenar correctamente el gestion de gastos",
       content: "Después de varios años usando el sistema, aquí van mis mejores consejos...",
       author: {
         name: "Roberto Silva",
@@ -78,7 +78,7 @@ const CommunityForum = () => {
       views: 289,
       lastActivity: "2025-01-21T14:20:00",
       isSticky: false,
-      tags: ["gastos", "formulario", "tips"]
+      tags: ["gastos", "gestion", "tips"]
     },
     {
       id: 5,

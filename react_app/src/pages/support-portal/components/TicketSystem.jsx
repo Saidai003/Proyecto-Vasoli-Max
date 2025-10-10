@@ -18,7 +18,7 @@ const TicketSystem = () => {
     { value: 'technical', label: 'Soporte Técnico' },
     { value: 'payroll', label: 'Nómina y Pagos' },
     { value: 'benefits', label: 'Beneficios' },
-    { value: 'forms', label: 'Formularios' },
+    { value: 'forms', label: 'Gestiones' },
     { value: 'policies', label: 'Políticas y Procedimientos' },
     { value: 'other', label: 'Otros' }
   ];
@@ -44,7 +44,7 @@ const TicketSystem = () => {
     {
       id: 'TK-2025-002',
       subject: 'Solicitud de certificado laboral',
-      category: 'Formularios',
+      category: 'Gestiones',
       priority: 'medium',
       status: 'pending',
       created: '2025-01-18',

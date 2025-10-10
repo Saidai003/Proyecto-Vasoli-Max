@@ -9,7 +9,7 @@ const KnowledgeBase = () => {
 
   const categories = [
     { id: 'all', name: 'Todas las Categorías', icon: 'Grid3X3' },
-    { id: 'forms', name: 'Formularios', icon: 'FileText' },
+    { id: 'forms', name: 'Gestiones', icon: 'FileText' },
     { id: 'payroll', name: 'Nómina', icon: 'DollarSign' },
     { id: 'benefits', name: 'Beneficios', icon: 'Heart' },
     { id: 'technical', name: 'Soporte Técnico', icon: 'Monitor' },
@@ -25,7 +25,7 @@ const KnowledgeBase = () => {
       views: 1250,
       helpful: 98,
       lastUpdated: "2025-01-15",
-      tags: ["vacaciones", "formularios", "solicitudes"]
+      tags: ["vacaciones", "gestiones", "solicitudes"]
     },
     {
       id: 2,

@@ -158,7 +158,7 @@ const FormCard = ({ form, onSelect, className = '' }) => {
         </div>
       )}
 
-      {/* DETALLES DEL FORMULARIO */}
+      {/* DETALLES DEL gestion */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center space-x-4 text-xs text-muted-foreground">
           <div className="flex items-center space-x-1">

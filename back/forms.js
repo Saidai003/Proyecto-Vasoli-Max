@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { ObjectId } = require("mongodb");
 
-// Crear un formulario
+// Crear una gestion
 router.post("/", async (req, res) => {
   try {
     data = req.body;
@@ -20,35 +20,35 @@ router.post("/", async (req, res) => {
         { $set: { ...req.body, updatedAt: new Date() } },
         { returnDocument: "after" }
       );
-      if (!result.value) return res.status(404).json({ error: "Formulario no encontrado" });
+      if (!result.value) return res.status(404).json({ error: "gestion no encontrado" });
     }
     res.status(201).json(result);
   } catch (err) {
-    res.status(500).json({ error: "Error al crear formulario, error: ", err });
+    res.status(500).json({ error: "Error al crear gestion, error: ", err });
   }
 });
 
-// Listar todos los formularios
+// Listar todos las gestiones
 router.get("/", async (req, res) => {
   try {
     const forms = await req.db.collection("forms").find().toArray();
     res.json(forms);
   } catch (err) {
-    res.status(500).json({ error: "Error al obtener formularios" });
+    res.status(500).json({ error: "Error al obtener gestiones" });
   }
 });
 
-// Obtener un formulario por ID (Mongo ObjectId)
+// Obtener una gestion por ID (Mongo ObjectId)
 router.get("/:id", async (req, res) => {
   try {
     const form = await req.db
       .collection("forms")
       .findOne({ _id: new ObjectId(req.params.id) });
 
-    if (!form) return res.status(404).json({ error: "Formulario no encontrado" });
+    if (!form) return res.status(404).json({ error: "gestion no encontrado" });
     res.json(form);
   } catch (err) {
-    res.status(500).json({ error: "Error al obtener formulario" });
+    res.status(500).json({ error: "Error al obtener gestion" });
   }
 });
 
@@ -60,16 +60,16 @@ router.get("/section/:section", async (req, res) => {
       .toArray();
 
     if (!forms.length)
-      return res.status(404).json({ error: "No se encontraron formularios en esta sección" });
+      return res.status(404).json({ error: "No se encontraron gestiones en esta sección" });
 
     res.status(200).json(forms);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ error: "Error al obtener formularios por sección" });
+    res.status(500).json({ error: "Error al obtener gestiones por sección" });
   }
 });
 
-// Actualizar un formulario
+// Actualizar una gestion
 router.put("/:id", async (req, res) => {
   try {
     const result = await req.db.collection("forms").findOneAndUpdate(
@@ -78,14 +78,14 @@ router.put("/:id", async (req, res) => {
       { returnDocument: "after" }
     );
 
-    if (!result.value) return res.status(404).json({ error: "Formulario no encontrado" });
+    if (!result.value) return res.status(404).json({ error: "gestion no encontrado" });
     res.json(result.value);
   } catch (err) {
-    res.status(500).json({ error: "Error al actualizar formulario" });
+    res.status(500).json({ error: "Error al actualizar gestion" });
   }
 });
 
-// Publicar un formulario (cambiar status de draft → published)
+// Publicar una gestion (cambiar status de draft → published)
 router.put("/public/:id", async (req, res) => {
   try {
     const result = await req.db.collection("forms").findOneAndUpdate(
@@ -100,16 +100,16 @@ router.put("/public/:id", async (req, res) => {
     );
 
     if (!result.value)
-      return res.status(404).json({ error: "Formulario no encontrado" });
+      return res.status(404).json({ error: "gestion no encontrado" });
 
     res.status(200).json(result.value);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ error: "Error al publicar formulario" });
+    res.status(500).json({ error: "Error al publicar gestion" });
   }
 });
 
-// Eliminar un formulario
+// Eliminar una gestion
 router.delete("/:id", async (req, res) => {
   console.log("BORRAR AQUI")
   try {
@@ -118,12 +118,12 @@ router.delete("/:id", async (req, res) => {
       .deleteOne({ _id: new ObjectId(req.params.id) });
 
     if (result.deletedCount === 0) {
-      return res.status(404).json({ error: "Formulario no encontrado" });
+      return res.status(404).json({ error: "gestion no encontrado" });
     }
 
-    res.status(200).json({ message: "Formulario eliminado" });
+    res.status(200).json({ message: "gestion eliminado" });
   } catch (err) {
-    res.status(500).json({ error: "Error al eliminar formulario" });
+    res.status(500).json({ error: "Error al eliminar gestion" });
   }
 });
 

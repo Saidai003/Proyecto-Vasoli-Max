@@ -46,7 +46,7 @@ const FormCenter = () => {
 
         setAllForms(normalizedForms);
       } catch (err) {
-        console.error('Error cargando formularios:', err);
+        console.error('Error cargando gestiones:', err);
       } finally {
         setIsLoading(false);
       }
@@ -154,9 +154,9 @@ const FormCenter = () => {
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <div>
-                <h1 className="text-3xl font-bold text-foreground">Gestion de Formularios</h1>
+                <h1 className="text-3xl font-bold text-foreground">Gestion de gestiones</h1>
                 <p className="text-muted-foreground mt-1">
-                  Administración y gestion de formularios
+                  Administración y gestion de gestiones
                 </p>
               </div>
 
@@ -193,7 +193,7 @@ const FormCenter = () => {
                   </div>
                   <div>
                     <p className="text-2xl font-bold text-foreground">{allForms.length}</p>
-                    <p className="text-sm text-muted-foreground">Formularios Disponibles</p>
+                    <p className="text-sm text-muted-foreground">gestiones Disponibles</p>
                   </div>
                 </div>
               </div>
@@ -266,13 +266,13 @@ const FormCenter = () => {
                     <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
                       <Icon name="Loader" size={24} className="text-muted-foreground animate-spin" />
                     </div>
-                    <h3 className="text-lg font-medium text-foreground mb-2">Cargando formularios...</h3>
+                    <h3 className="text-lg font-medium text-foreground mb-2">Cargando gestiones...</h3>
                   </div>
                 ) : (
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <h3 className="text-lg font-semibold text-foreground">
-                        Formularios ({filteredForms.length})
+                        gestiones ({filteredForms.length})
                       </h3>
 
                       {searchQuery && (
@@ -287,7 +287,7 @@ const FormCenter = () => {
                         <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
                           <Icon name="Search" size={24} className="text-muted-foreground" />
                         </div>
-                        <h3 className="text-lg font-medium text-foreground mb-2">No se encontraron Formularios</h3>
+                        <h3 className="text-lg font-medium text-foreground mb-2">No se encontraron gestiones</h3>
                         <p className="text-muted-foreground mb-4">
                           prueba a ajustar los criterios de busqueda y filtrado
                         </p>

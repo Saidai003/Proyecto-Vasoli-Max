@@ -67,7 +67,7 @@ const FormBuilder = () => {
     const fetchForm = async () => {
       try {
         const res = await fetch(`http://localhost:4000/api/forms/${formId}`);
-        if (!res.ok) throw new Error('Formulario no encontrado');
+        if (!res.ok) throw new Error('gestion no encontrado');
         const data = await res.json();
 
         // Normalización corregida - incluyendo section
@@ -91,8 +91,8 @@ const FormBuilder = () => {
 
         setFormData(normalizedForm);
       } catch (err) {
-        console.error('Error cargando el formulario:', err);
-        alert('No se pudo cargar el formulario');
+        console.error('Error cargando el gestion:', err);
+        alert('No se pudo cargar el gestion');
       }
     };
 
@@ -202,7 +202,7 @@ const FormBuilder = () => {
   // Save form as draft - FUNCIÓN CORREGIDA
   const saveForm = async () => {
     if (!formData?.title?.trim()) {
-      alert("Por favor ingresa un título para el formulario");
+      alert("Por favor ingresa un título para el gestion");
       return;
     }
 
@@ -243,7 +243,7 @@ const FormBuilder = () => {
         updatedAt: savedForm.updatedAt || new Date().toISOString()
       }));
 
-      alert("Formulario guardado como borrador exitosamente");
+      alert("gestion guardado como borrador exitosamente");
 
       // Actualizar URL si es nuevo
       if (!formData?.id) {
@@ -252,7 +252,7 @@ const FormBuilder = () => {
 
     } catch (error) {
       console.error(error);
-      alert("Error al guardar el formulario: " + error.message);
+      alert("Error al guardar el gestion: " + error.message);
     } finally {
       setIsSaving(false);
     }
@@ -266,13 +266,13 @@ const FormBuilder = () => {
         cache: "no-cache",
       });
 
-      if (!response.ok) throw new Error("No se pudo eliminar el formulario");
+      if (!response.ok) throw new Error("No se pudo eliminar el gestion");
 
-      alert("Formulario borrado exitosamente");
+      alert("gestion borrado exitosamente");
       window.location.href = "/form-center";
     } catch (error) {
       console.error(error);
-      alert("Error al eliminar el formulario");
+      alert("Error al eliminar el gestion");
     }
   };
 
@@ -294,10 +294,10 @@ const FormBuilder = () => {
       const updatedForm = await response.json();
       setFormData(prev => ({ ...prev, status: "published" }));
 
-      alert("¡Formulario publicado exitosamente!");
+      alert("¡gestion publicado exitosamente!");
     } catch (error) {
       console.error(error);
-      alert("Error al publicar el formulario");
+      alert("Error al publicar el gestion");
     } finally {
       setIsPublishing(false);
     }
@@ -361,18 +361,18 @@ const FormBuilder = () => {
                   iconName="ArrowLeft"
                   iconPosition="left"
                 >
-                  Volver al Centro de Formularios
+                  Volver al Centro de gestiones
                 </Button>
               </div>
 
               <div>
                 <h1 className="text-3xl font-bold text-foreground">
-                  {formData?.id ? 'Editar Formulario' : 'Crear Formulario Personalizado'}
+                  {formData?.id ? 'Editar gestion' : 'Crear gestion Personalizado'}
                 </h1>
                 <p className="text-muted-foreground">
                   {formData?.id
-                    ? 'Modifica tu formulario existente y administra las preguntas'
-                    : 'Diseña un formulario personalizado con preguntas dinámicas'
+                    ? 'Modifica tu gestion existente y administra las preguntas'
+                    : 'Diseña una gestion personalizado con preguntas dinámicas'
                   }
                 </p>
               </div>
@@ -409,7 +409,7 @@ const FormBuilder = () => {
                 iconPosition="left"
                 disabled={isSaving}
               >
-                Publicar Formulario
+                Publicar gestion
               </Button>
             </div>
           </div>
@@ -479,7 +479,7 @@ const FormBuilder = () => {
                   variant="ghost"
                   size="icon"
                   onClick={() => {
-                    if (window.confirm('¿Estás seguro de que quieres eliminar este Formulario?')) {
+                    if (window.confirm('¿Estás seguro de que quieres eliminar este gestion?')) {
                       deleteForm();
                     }
                   }}
