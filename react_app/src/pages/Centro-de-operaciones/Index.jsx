@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import MainSidebar from '../../components/ui/MainSidebar';
-import NavigationHeader from '../../components/ui/NavigationHeader';
+import MainSidebar from '../../components/ui/Sidebar';
+import NavigationHeader from '../../components/ui/Header';
 import BreadcrumbTrail from '../../components/ui/BreadcrumbTrail';
 import KPIMetricsStrip from './components/KPIMetricsStrip';
 import GlobalControlsPanel from './components/GlobalControlsPanel';

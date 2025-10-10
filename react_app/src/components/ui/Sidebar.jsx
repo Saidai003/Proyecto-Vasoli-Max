@@ -17,7 +17,6 @@ const Sidebar = ({ isCollapsed = false, onToggleCollapse, className = '' }) => {
     { name: 'Usuarios', path: '/users', icon: 'User', description: 'Gestion de empresas y Admins' },
     { name: 'Soporte', path: '/support-portal', icon: 'HelpCircle', description: 'Conseguir ayuda y recuros' },
     
-    
   ];
 
   const quickActions = [

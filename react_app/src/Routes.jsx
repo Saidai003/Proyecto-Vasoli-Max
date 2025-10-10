@@ -14,7 +14,7 @@ import RespuestasForms from './pages/Respuestas/Index.jsx';
 import FormBuilder from './pages/form-builder/Index.jsx';
 import FormRenderer from './pages/form-renderer/Index.jsx';
 import Users from './pages/users/Index.jsx';
-import operationCenter from './pages/Centro-de-operaciones/Index.jsx';
+import Operationcenter from './pages/Centro-de-operaciones/Index.jsx';
 
 import Home from './clientPages/home/Index.jsx';
 import FormList from './clientPages/FormList/Index.jsx';
@@ -47,7 +47,7 @@ const Routes = () => {
               </ProtectedRoute>
             }
           />
-          <Route path="/centro-operaciones" element={<ProtectedRoute><operationCenter /></ProtectedRoute>}/>
+          <Route path="/centro-operaciones" element={<ProtectedRoute><Operationcenter /></ProtectedRoute>}/>
           <Route path="/RespuestasForms" element={<ProtectedRoute><RespuestasForms /></ProtectedRoute>}/>
           <Route path="/support-portal" element={<ProtectedRoute> <SupportPortal /> </ProtectedRoute>}/>
           <Route path="/users" element={<ProtectedRoute> <Users /> </ProtectedRoute>}/>
