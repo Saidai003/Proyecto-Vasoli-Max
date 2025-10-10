@@ -21,7 +21,7 @@ const FormCanvas = ({
             Comienza creando tu gestion
           </h3>
           <p className="text-gray-600 mb-4">
-            Selecciona un tipo de pregunta del panel izquierdo para empezar
+            Selecciona un tipo de tarea del panel izquierdo para empezar
           </p>
         </div>
       </div>
@@ -59,7 +59,7 @@ const FormCanvas = ({
           )}
         </div>
       </div>
-      {/* Lista de preguntas */}
+      {/* Lista de tareas */}
       <div className="space-y-4">
         {form?.questions?.map((question, index) => (
           <div
@@ -70,12 +70,12 @@ const FormCanvas = ({
             }`}
             onClick={() => onSelectQuestion(question?.id)}
           >
-            {/* Barra de herramientas de la pregunta */}
+            {/* Barra de herramientas de la tarea */}
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center space-x-2">
                 <GripVertical size={16} className="text-gray-400 cursor-move" />
                 <span className="text-sm font-medium text-gray-600">
-                  Pregunta {index + 1}
+                  tarea {index + 1}
                 </span>
                 {question?.required && (
                   <span className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded">
@@ -116,7 +116,7 @@ const FormCanvas = ({
               </div>
             </div>
 
-            {/* Editor de pregunta */}
+            {/* Editor de tarea */}
             <QuestionEditor
               question={question}
               isSelected={selectedQuestion === question?.id}

@@ -17,4 +17,4 @@ volumes:
   mongo_data:
 
 
-## docker exec -it vasoli_mongo mongosh -u admin -p secret --authenticationDatabase admin
+## docker exec -it vasoli_mongo mongo -u admin -p secret --authenticationDatabase admin

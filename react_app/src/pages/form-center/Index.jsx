@@ -180,7 +180,7 @@ const FormCenter = () => {
                   iconSize={18}
                   onClick={() => window.location.href = "/form-builder"}
                 >
-                  Create Custom Form
+                  crear gestión personalizada
                 </Button>
               </div>
             </div>

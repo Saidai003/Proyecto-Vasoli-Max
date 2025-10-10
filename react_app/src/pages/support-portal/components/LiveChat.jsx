@@ -48,7 +48,7 @@ const LiveChat = () => {
         "Gracias por contactarnos. He encontrado información relevante sobre tu solicitud.",
         "Perfecto, puedo ayudarte con eso. ¿Podrías proporcionarme más detalles?",
         "He registrado tu consulta. Un agente especializado te contactará en breve.",
-        "Excelente pregunta. Te voy a proporcionar los pasos a seguir."
+        "Excelente tarea. Te voy a proporcionar los pasos a seguir."
       ];
 
       const botMessage = {

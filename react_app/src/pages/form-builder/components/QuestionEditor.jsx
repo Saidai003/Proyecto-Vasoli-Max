@@ -322,7 +322,7 @@ const QuestionEditor = ({
 
       default:
         return (
-          <div className="text-gray-500">Tipo de pregunta no soportado: {normalizedType}</div>
+          <div className="text-gray-500">Tipo de tarea no soportado: {normalizedType}</div>
         );
     }
   }, [
@@ -408,7 +408,7 @@ const QuestionEditor = ({
         <div className="mb-4">
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Tipo de Pregunta
+              Tipo de tarea
             </label>
             <select
               value={localQuestion.type || 'text'}
@@ -425,7 +425,7 @@ const QuestionEditor = ({
 
           <div className="space-y-2 mb-3">
             <label className="block text-sm font-medium text-gray-700">
-              Título de la Pregunta *
+              Título de la tarea *
             </label>
             <input
               type="text"
@@ -433,7 +433,7 @@ const QuestionEditor = ({
               onChange={(e) => handleTitleChange(e.target.value)}
               onBlur={handleTitleBlur}
               maxLength={50}
-              placeholder="Título de la pregunta"
+              placeholder="Título de la tarea"
               className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:border-blue-500 ${
                 (localQuestion.title?.length || 0) >= 50 
                   ? 'border-red-500 focus:ring-red-200' 
@@ -479,7 +479,7 @@ const QuestionEditor = ({
       ) : (
         <div className="mb-3">
           <h3 className="text-lg font-medium text-gray-900">
-            {localQuestion.title || 'Pregunta sin título'}
+            {localQuestion.title || 'tarea sin título'}
             {localQuestion.required && <span className="text-red-600 ml-1">*</span>}
           </h3>
           {localQuestion.description && (

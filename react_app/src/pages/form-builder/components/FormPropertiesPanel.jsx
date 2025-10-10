@@ -133,16 +133,16 @@ const FormPropertiesPanel = ({
           </div>
         </div>
 
-        {/* Propiedades de la pregunta seleccionada */}
+        {/* Propiedades de la tarea seleccionada */}
         {selectedQuestion && question && (
           <div>
             <h3 className="text-sm font-medium text-gray-900 mb-3">
-              Propiedades de la Pregunta
+              Propiedades de la tarea
             </h3>
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Tipo de pregunta
+                  Tipo de tarea
                 </label>
                 <span className="inline-block px-2 py-1 bg-gray-100 text-gray-800 rounded text-sm">
                   {question?.type === 'text' && 'Texto'}
