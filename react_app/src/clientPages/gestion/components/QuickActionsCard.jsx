@@ -36,9 +36,9 @@ const FormPreview = ({ formData }) => {
     fetchForm();
   }, []);
 
-  // Función para obtener el título de una pregunta (sin concatenación para el envío)
+  // Función para obtener el título de una tarea (sin concatenación para el envío)
   const getQuestionTitle = (question) => {
-    return question.title || 'Pregunta sin título';
+    return question.title || 'tarea sin título';
   };
 
   // Manejar cambios en inputs - INTERNAMENTE USA IDs, PERO PARA ENVÍO USA TÍTULOS
@@ -112,14 +112,14 @@ const FormPreview = ({ formData }) => {
     });
   };
 
-  // Función recursiva para validar preguntas y subsecciones - INTERNAMENTE USA IDs
+  // Función recursiva para validar tareas y subsecciones - INTERNAMENTE USA IDs
   const validateQuestions = (questions, answers, parentPath = '') => {
     const errors = {};
 
     questions.forEach((question, index) => {
       const questionPath = parentPath ? `${parentPath}.${question.id}` : question.id;
 
-      // Validar pregunta principal
+      // Validar tarea principal
       if (question.required) {
         const answer = answers[question.id];
 
@@ -144,7 +144,7 @@ const FormPreview = ({ formData }) => {
                 : false;
 
           if (shouldValidateSubsection) {
-            // Validar recursivamente las preguntas de la subsección
+            // Validar recursivamente las tareas de la subsección
             const subErrors = validateQuestions(option.subformQuestions, answers, questionPath);
             Object.assign(errors, subErrors);
           }
@@ -182,7 +182,7 @@ const FormPreview = ({ formData }) => {
                 : false;
 
           if (shouldProcessSubsection) {
-            // Mapear recursivamente las preguntas de la subsección
+            // Mapear recursivamente las tareas de la subsección
             mapAnswersToTitles(option.subformQuestions, answers, mappedAnswers);
           }
         }
@@ -196,7 +196,7 @@ const FormPreview = ({ formData }) => {
   const validateForm = () => {
     let newErrors = {};
 
-    // Validar preguntas principales y subsecciones recursivamente
+    // Validar tareas principales y subsecciones recursivamente
     newErrors = validateQuestions(formData?.questions || [], answers);
 
     // EL CAMPO RESPALDO YA NO ES OBLIGATORIO
@@ -205,10 +205,10 @@ const FormPreview = ({ formData }) => {
     return Object.keys(newErrors).length === 0;
   };
 
-  // Función para renderizar una pregunta individual (MANTIENE LA VISUAL ORIGINAL)
+  // Función para renderizar una tarea individual (MANTIENE LA VISUAL ORIGINAL)
   const renderQuestion = (question, index, showNumber = true, parentPath = '') => {
     const questionPath = parentPath ? `${parentPath}.${question.id}` : question.id;
-    const questionTitle = question.title || `Pregunta ${index + 1}`;
+    const questionTitle = question.title || `tarea ${index + 1}`;
     const baseInputClass = 'w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-black text-base focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all';
     const value = answers[question.id] || '';
     const error = errors[question.id];
@@ -359,7 +359,7 @@ const FormPreview = ({ formData }) => {
         default:
           return (
             <div className="text-center py-4 text-gray-500">
-              Tipo de pregunta no soportado
+              Tipo de tarea no soportado
             </div>
           );
       }
@@ -367,7 +367,7 @@ const FormPreview = ({ formData }) => {
 
     return (
       <div key={question?.id} className="space-y-4">
-        {/* Pregunta principal */}
+        {/* tarea principal */}
         <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
           <div className="mb-4">
             <div className="flex items-start space-x-3">
@@ -404,7 +404,7 @@ const FormPreview = ({ formData }) => {
           </div>
         </div>
 
-        {/* Subsecciones recursivas de esta pregunta - VISUAL ORIGINAL */}
+        {/* Subsecciones recursivas de esta tarea - VISUAL ORIGINAL */}
         {(question?.options || []).map((option, optionIndex) => {
           if (typeof option === 'object' && option.hasSubform && option.subformQuestions && option.subformQuestions.length > 0) {
             const optionText = option.text || `Opción ${optionIndex + 1}`;
@@ -499,7 +499,7 @@ const FormPreview = ({ formData }) => {
           Vista previa no disponible
         </h3>
         <p className="text-gray-600">
-          Completa las propiedades del gestion y agrega preguntas para ver la vista previa
+          Completa las propiedades del gestion y agrega tareas para ver la vista previa
         </p>
       </div>
     );
@@ -546,7 +546,7 @@ const FormPreview = ({ formData }) => {
 
             {formData?.questions?.length > 0 && (
               <p className="text-gray-600">
-                {formData?.questions?.length} pregunta
+                {formData?.questions?.length} tarea
                 {formData?.questions?.length !== 1 ? 's' : ''} •{' '}
                 {formData?.questions?.filter((q) => q?.required)?.length} obligatoria
                 {formData?.questions?.filter((q) => q?.required)?.length !== 1 ? 's' : ''}
@@ -554,7 +554,7 @@ const FormPreview = ({ formData }) => {
             )}
           </div>
 
-          {/* Preguntas y subsecciones recursivas - VISUAL ORIGINAL */}
+          {/* tareas y subsecciones recursivas - VISUAL ORIGINAL */}
           <div className="space-y-6">
             {formData?.questions?.map((question, index) =>
               renderQuestion(question, index, true)

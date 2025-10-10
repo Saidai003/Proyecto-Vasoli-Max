@@ -138,7 +138,7 @@ const FormBuilder = () => {
       setActiveTab('questions');
     }
 
-    // AGREGAR ESTA LÍNEA PARA RETORNAR LA NUEVA PREGUNTA
+    // AGREGAR ESTA LÍNEA PARA RETORNAR LA NUEVA tarea
     return newQuestion;
   };
 
@@ -206,13 +206,13 @@ const FormBuilder = () => {
       return;
     }
 
-    // Validación adicional de títulos de preguntas
+    // Validación adicional de títulos de tareas
     const hasLongQuestionTitles = formData.questions.some(
       q => (q.title?.length || 0) > 50
     );
 
     if (hasLongQuestionTitles) {
-      alert('Una o más preguntas tienen títulos que exceden los 50 caracteres');
+      alert('Una o más tareas tienen títulos que exceden los 50 caracteres');
       return;
     }
 
@@ -306,7 +306,7 @@ const FormBuilder = () => {
   // Navigation tabs
   const tabs = [
     { id: 'properties', label: 'Propiedades', icon: 'Settings' },
-    { id: 'questions', label: 'Preguntas', icon: 'HelpCircle', count: formData?.questions?.length },
+    { id: 'questions', label: 'tareas', icon: 'HelpCircle', count: formData?.questions?.length },
     { id: 'preview', label: 'Vista Previa', icon: 'Eye' }
   ];
 
@@ -371,8 +371,8 @@ const FormBuilder = () => {
                 </h1>
                 <p className="text-muted-foreground">
                   {formData?.id
-                    ? 'Modifica tu gestion existente y administra las preguntas'
-                    : 'Diseña una gestion personalizado con preguntas dinámicas'
+                    ? 'Modifica tu gestion existente y administra las tareas'
+                    : 'Diseña una gestion personalizado con tareas dinámicas'
                   }
                 </p>
               </div>
@@ -436,9 +436,9 @@ const FormBuilder = () => {
                 </p>
               </div>
               <div className="space-y-1">
-                <p className="text-sm text-muted-foreground">Preguntas</p>
+                <p className="text-sm text-muted-foreground">tareas</p>
                 <p className="font-medium text-foreground">
-                  {formData?.questions?.length} pregunta{formData?.questions?.length !== 1 ? 's' : ''}
+                  {formData?.questions?.length} tarea{formData?.questions?.length !== 1 ? 's' : ''}
                 </p>
               </div>
               <div className="space-y-1">

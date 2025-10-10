@@ -50,8 +50,8 @@ const CommunityForum = () => {
     },
     {
       id: 3,
-      title: "Nueva política de trabajo remoto - Preguntas frecuentes",
-      content: "Compilación de las preguntas más comunes sobre la nueva política...",
+      title: "Nueva política de trabajo remoto - tareas frecuentes",
+      content: "Compilación de las tareas más comunes sobre la nueva política...",
       author: {
         name: "Ana López",
         avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop&crop=face",

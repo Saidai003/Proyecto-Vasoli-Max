@@ -104,7 +104,7 @@ const FormPreview = ({ formData }) => {
       default:
         return (
           <div className="text-center py-4 text-muted-foreground">
-            Tipo de pregunta no soportado
+            Tipo de tarea no soportado
           </div>
         );
     }
@@ -120,7 +120,7 @@ const FormPreview = ({ formData }) => {
           Vista previa no disponible
         </h3>
         <p className="text-muted-foreground">
-          Completa las propiedades del gestion y agrega preguntas para ver la vista previa
+          Completa las propiedades del gestion y agrega tareas para ver la vista previa
         </p>
       </div>
     );
@@ -182,13 +182,13 @@ const FormPreview = ({ formData }) => {
 
             {formData?.questions?.length > 0 && (
               <p className="text-gray-600">
-                {formData?.questions?.length} pregunta{formData?.questions?.length !== 1 ? 's' : ''} • 
+                {formData?.questions?.length} tarea{formData?.questions?.length !== 1 ? 's' : ''} • 
                 {formData?.questions?.filter(q => q?.required)?.length} obligatoria{formData?.questions?.filter(q => q?.required)?.length !== 1 ? 's' : ''}
               </p>
             )}
           </div>
 
-          {/* Form Questions - MOSTRAR PREGUNTAS DEL NIVEL 0 NORMALMENTE */}
+          {/* Form Questions - MOSTRAR tareas DEL NIVEL 0 NORMALMENTE */}
           {formData?.questions?.length > 0 ? (
             <div className="space-y-8">
               {formData?.questions?.map((question, index) => (
@@ -205,7 +205,7 @@ const FormPreview = ({ formData }) => {
                       
                       <div className="flex-1">
                         <h3 className="text-lg font-semibold text-black mb-1">
-                          {question?.title || `Pregunta ${index + 1}`}
+                          {question?.title || `tarea ${index + 1}`}
                           {question?.required && (
                             <span className="text-red-600 ml-1">*</span>
                           )}
@@ -259,10 +259,10 @@ const FormPreview = ({ formData }) => {
                 <Icon name="FileText" size={24} className="text-gray-400" />
               </div>
               <h3 className="text-lg font-medium text-black mb-2">
-                Sin preguntas aún
+                Sin tareas aún
               </h3>
               <p className="text-gray-600">
-                Agrega preguntas en la pestaña "Preguntas" para verlas aquí
+                Agrega tareas en la pestaña "tareas" para verlas aquí
               </p>
             </div>
           )}

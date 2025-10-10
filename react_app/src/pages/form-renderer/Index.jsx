@@ -209,7 +209,7 @@ const FormRenderer = () => {
       default:
         return (
           <div className="text-center py-4 text-muted-foreground">
-            Tipo de pregunta no soportado
+            Tipo de tarea no soportado
           </div>
         );
     }
@@ -368,7 +368,7 @@ const FormRenderer = () => {
                 </div>
 
                 <p className="text-gray-600">
-                  {formData?.questions?.length} pregunta{formData?.questions?.length !== 1 ? 's' : ''} • 
+                  {formData?.questions?.length} tarea{formData?.questions?.length !== 1 ? 's' : ''} • 
                   {formData?.questions?.filter(q => q?.required)?.length} obligatoria{formData?.questions?.filter(q => q?.required)?.length !== 1 ? 's' : ''}
                 </p>
               </div>

@@ -184,7 +184,7 @@ const QuestionBuilder = ({
           options: newOptions
         });
 
-        // EXPANDIR AUTOMÁTICAMENTE LA NUEVA SUBPREGUNTA
+        // EXPANDIR AUTOMÁTICAMENTE LA NUEVA SUBtarea
         const newQuestionPath = `${questionPath}.sub.${newQuestion.id}`;
         setExpandedQuestions(prev => ({
           ...prev,
@@ -399,7 +399,7 @@ const QuestionBuilder = ({
                               iconName="Plus"
                               iconPosition="left"
                             >
-                              Agregar Pregunta
+                              Agregar tarea
                             </Button>
                           </div>
 
@@ -425,7 +425,7 @@ const QuestionBuilder = ({
 
                           {option.subformQuestions.length === 0 && (
                             <div className="text-center py-4 text-sm text-blue-600 bg-blue-50 rounded">
-                              No hay preguntas en esta subsección
+                              No hay tareas en esta subsección
                             </div>
                           )}
                         </div>
@@ -443,7 +443,7 @@ const QuestionBuilder = ({
     const questionType = questionTypes.find(type => type.value === localQuestion.type);
 
     const handleDelete = () => {
-      if (window.confirm('¿Estás seguro de que quieres eliminar esta pregunta?')) {
+      if (window.confirm('¿Estás seguro de que quieres eliminar esta tarea?')) {
         if (depth > 0) {
           onDeleteSubquestion(localQuestion.id);
         } else {
@@ -477,7 +477,7 @@ const QuestionBuilder = ({
               </div>
               <div>
                 <p className="font-medium text-foreground">
-                  {localQuestion.title || `Pregunta ${index + 1}`}
+                  {localQuestion.title || `tarea ${index + 1}`}
                   {depth > 0 && <span className="text-xs text-blue-600 ml-2">Nivel {depth}</span>}
                 </p>
                 <p className="text-sm text-muted-foreground">
@@ -567,7 +567,7 @@ const QuestionBuilder = ({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <label className="text-sm font-medium text-foreground">
-                  Tipo de Pregunta
+                  Tipo de tarea
                 </label>
                 <select
                   className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
@@ -600,14 +600,14 @@ const QuestionBuilder = ({
             <div className="space-y-4">
               <div className="space-y-2">
                 <label className="text-sm font-medium text-foreground">
-                  Título de la Pregunta *
+                  Título de la tarea *
                   <span className="text-xs text-muted-foreground ml-2">
                     ({localQuestion.title?.length || 0}/50 caracteres)
                   </span>
                 </label>
                 <input
                   type="text"
-                  placeholder="Escribe tu pregunta aquí..."
+                  placeholder="Escribe tu tarea aquí..."
                   value={localQuestion.title || ''}
                   onChange={(e) => handleTitleChange(e.target.value)}
                   onBlur={saveChanges}
@@ -657,10 +657,10 @@ const QuestionBuilder = ({
           </div>
           <div>
             <h3 className="text-lg font-semibold text-foreground">
-              Constructor de Preguntas
+              Constructor de tareas
             </h3>
             <p className="text-sm text-muted-foreground">
-              Agrega y configura las preguntas de tu gestion
+              Agrega y configura las tareas de tu gestion
             </p>
           </div>
         </div>
@@ -678,7 +678,7 @@ const QuestionBuilder = ({
           iconName="Plus"
           iconPosition="left"
         >
-          Agregar Pregunta
+          Agregar tarea
         </Button>
       </div>
 
@@ -688,10 +688,10 @@ const QuestionBuilder = ({
             <Icon name="HelpCircle" size={24} className="text-muted-foreground" />
           </div>
           <h3 className="text-lg font-medium text-foreground mb-2">
-            No hay preguntas aún
+            No hay tareas aún
           </h3>
           <p className="text-muted-foreground mb-4">
-            Comienza agregando tu primera pregunta al gestion
+            Comienza agregando tu primera tarea al gestion
           </p>
           <Button
             onClick={() => {
@@ -706,7 +706,7 @@ const QuestionBuilder = ({
             iconName="Plus"
             iconPosition="left"
           >
-            Agregar Primera Pregunta
+            Agregar Primera tarea
           </Button>
         </div>
       ) : (
@@ -728,7 +728,7 @@ const QuestionBuilder = ({
         <div className="bg-muted/50 border-2 border-dashed border-muted-foreground/50 rounded-lg p-6 text-center">
           <Icon name="Plus" size={24} className="text-muted-foreground mx-auto mb-2" />
           <p className="text-muted-foreground mb-3">
-            ¿Listo para la siguiente pregunta?
+            ¿Listo para la siguiente tarea?
           </p>
           <Button
             onClick={() => {
@@ -743,7 +743,7 @@ const QuestionBuilder = ({
             iconName="Plus"
             iconPosition="left"
           >
-            Agregar Otra Pregunta
+            Agregar Otra tarea
           </Button>
         </div>
       )}
