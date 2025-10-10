@@ -1,134 +1,301 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../components/ui/Header';
-import WelcomeCard from './components/WelcomeCard';
-import QuickActionsCard from './components/QuickActionsCard';
-import RecentActivityCard from './components/RecentActivityCard';
-import StatsOverviewCard from './components/StatsOverviewCard';
-import NotificationsCard from './components/NotificationsCard';
-import Icon from '../components/AppIcon';
-import Button from '../components/ui/Button';
+import GlobalHeader from '../../components/ui/Header';
+import NavigationBar from '../../components/ui/Sidebar';
+import FilterPanel from './components/FilterPanel';
+import MetricsStrip from './components/MetricsStrip';
+import TimelineVisualization from './components/TimelineVisualization';
+import TaskQueue from './components/TaskQueue';
+import TaskDataGrid from './components/TaskDataGrid';
+import PredictiveAnalytics from './components/PredictiveAnalytics';
+import Icon from '../../components/AppIcon';
+import Button from '../../components/ui/Button';
 
-const DashboardHome = () => {
+const TaskAnalyticsCenter = () => {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(true);
-  const [currentTime, setCurrentTime] = useState(new Date());
-  const user = sessionStorage.getItem("user");
-  const mail = sessionStorage.getItem("email");
-  
-  // Mock user data
-  const currentUser = {
-    id: 1,
-    name: user,
-    email: mail,
-    department: "Recursos Humanos",
-    position: "HR Specialist",
-    employeeId: "ACC-2024-001",
-    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face"
+  const [currentTimeRange, setCurrentTimeRange] = useState('7d');
+  const [currentDepartment, setCurrentDepartment] = useState('all');
+  const [activeFilters, setActiveFilters] = useState({});
+  const [savedFilters, setSavedFilters] = useState([]);
+  const [selectedTasks, setSelectedTasks] = useState([]);
+  const [viewMode, setViewMode] = useState('timeline'); // timeline, grid, predictions
+  const [isLoading, setIsLoading] = useState(false);
+  const [lastUpdated, setLastUpdated] = useState(new Date());
+
+  // Mock data state
+  const [tasksData, setTasksData] = useState([]);
+  const [metricsData, setMetricsData] = useState({});
+
+  // Simulate real-time data updates
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLastUpdated(new Date());
+      // Simulate minor metric updates
+      setMetricsData(prev => ({
+        ...prev,
+        taskVelocity: {
+          ...prev?.taskVelocity,
+          value: 24.5 + (Math.random() - 0.5) * 2
+        }
+      }));
+    }, 30000); // Update every 30 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleTimeRangeChange = (timeRange) => {
+    setCurrentTimeRange(timeRange);
+    setIsLoading(true);
+
+    // Simulate API call
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
   };
 
-  // Update time every minute
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 60000);
+  const handleDepartmentChange = (department) => {
+    setCurrentDepartment(department);
+    setIsLoading(true);
 
-    return () => clearInterval(timer);
-  }, []);
+    // Simulate API call
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 800);
+  };
+
+  const handleFiltersChange = (filters) => {
+    setActiveFilters(filters);
+  };
+
+  const handleSaveFilter = (savedFilter) => {
+    setSavedFilters(prev => [...prev, savedFilter]);
+  };
+
+  const handleLoadFilter = (savedFilter) => {
+    setActiveFilters(savedFilter?.filters);
+  };
+
+  const handleTaskClick = (task) => {
+    console.log('Task clicked:', task);
+    // Navigate to task detail or open modal
+  };
+
+  const handleTaskAction = (task, action) => {
+    console.log('Task action:', action, task);
+    // Handle task actions like start, complete, etc.
+  };
+
+  const handleBulkAction = (action, taskIds) => {
+    console.log('Bulk action:', action, taskIds);
+    setSelectedTasks([]);
+  };
+
+  const handleTaskEdit = (taskId, editValues) => {
+    console.log('Task edit:', taskId, editValues);
+    // Update task data
+  };
+
+  const handleZoomChange = (zoomLevel) => {
+    console.log('Zoom changed:', zoomLevel);
+  };
+
+  const handlePredictionClick = (prediction) => {
+    console.log('Prediction clicked:', prediction);
+  };
+
+  const handleExportData = () => {
+    console.log('Exporting data...');
+    // Export functionality
+  };
+
+  const handleRefreshData = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      setLastUpdated(new Date());
+    }, 1500);
+  };
 
   const toggleSidebar = () => {
     setSidebarCollapsed(!sidebarCollapsed);
   };
 
-  const handleEmergencyContact = () => {
-    window.location.href = '/support-portal?category=emergency';
-  };
-
-  const handleQuickHelp = () => {
-    window.location.href = '/support-portal?section=help';
+  const formatLastUpdated = (date) => {
+    return date?.toLocaleTimeString('es-MX', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
   };
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <Header />
-      
+      {/* Global Header */}
+      <GlobalHeader
+        onTimeRangeChange={handleTimeRangeChange}
+        onDepartmentChange={handleDepartmentChange}
+        currentTimeRange={currentTimeRange}
+        currentDepartment={currentDepartment}
+        alertCount={3}
+        isConnected={true}
+      />
       {/* Main Content */}
-      <main className={`transition-all duration-300 pt-16`}>
-        <div className="p-6 space-y-6">
+      <main className={`transition-all duration-300 pt-16 mt-6`}>
+        <div className="w-full px-6 space-y-6">
           {/* Page Header */}
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={toggleSidebar}
-                className="lg:hidden"
-              >
-                <Icon name="Menu" size={20} />
-              </Button>
-              
-            </div>
-          
-          </div>
 
-          {/* Welcome Section */}
-          <WelcomeCard user={currentUser} />
-
-          {/* Main Dashboard Grid */}
-          <div className="grid grid-cols-1  gap-6">
-            {/* Left Column - Primary Actions */}
-            <div className="xl:col-span-2 space-y-6">
-              {/* Quick Actions */}
-              <QuickActionsCard />
-              
-              {/* Recent Activity */}
-              <RecentActivityCard />
-
-              {/* Stats Overview */}
-              <StatsOverviewCard />
-              
-            </div>
-          </div>
-
-          {/* Footer Section */}
-          <div className="bg-card rounded-xl shadow-brand border border-border p-6 mt-8">
-            <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
-                  <Icon name="Building2" size={24} color="white" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground">Acciona HR Portal</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Tu plataforma integral de recursos humanos
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-6 text-sm text-muted-foreground">
-                <div className="flex items-center space-x-2">
-                  <Icon name="Shield" size={16} />
-                  <span>Seguro y Confiable</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Icon name="Clock" size={16} />
-                  <span>24/7 Disponible</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Icon name="Users" size={16} />
-                  <span>Soporte Dedicado</span>
-                </div>
-              </div>
-            </div>
-            <div className="mt-4 pt-4 border-t border-border text-center">
-              <p className="text-xs text-muted-foreground">
-                © {new Date()?.getFullYear()} Acciona. Todos los derechos reservados. 
-                Portal desarrollado para mejorar tu experiencia laboral.
+            <div>
+              <h1 className="text-3xl font-semibold text-foreground">
+                Centro de Análisis de Tareas
+              </h1>
+              <p className="text-muted-foreground mt-1">
+                Monitoreo detallado del rendimiento de tareas y identificación de cuellos de botella
               </p>
             </div>
+
+            <div className="flex items-center space-x-3">
+              <div className="text-sm text-muted-foreground">
+                Última actualización: {formatLastUpdated(lastUpdated)}
+              </div>
+              <Button
+                variant="outline"
+                onClick={handleRefreshData}
+                loading={isLoading}
+                iconName="RefreshCw"
+              >
+                Actualizar
+              </Button>
+              <Button
+                variant="outline"
+                onClick={handleExportData}
+                iconName="Download"
+              >
+                Exportar
+              </Button>
+            </div>
           </div>
+
+          {/* Filter Panel */}
+          <FilterPanel
+            onFiltersChange={handleFiltersChange}
+            savedFilters={savedFilters}
+            onSaveFilter={handleSaveFilter}
+            onLoadFilter={handleLoadFilter}
+          />
+
+          {/* Metrics Strip */}
+          <MetricsStrip metrics={metricsData} />
+
+          {/* View Mode Selector */}
+
+          {/* Main Content Area */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+            {/* Primary Content */}
+            <div className="lg:col-span-8 space-t-6">
+              <div className="bg-surface border border-border rounded-lg p-4">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-1">
+                    <Button
+                      variant={viewMode === 'timeline' ? 'default' : 'ghost'}
+                      onClick={() => setViewMode('timeline')}
+                      iconName="Calendar"
+                      size="sm"
+                    >
+                      Cronograma
+                    </Button>
+                    <Button
+                      variant={viewMode === 'grid' ? 'default' : 'ghost'}
+                      onClick={() => setViewMode('grid')}
+                      iconName="Table"
+                      size="sm"
+                    >
+                      Tabla de Datos
+                    </Button>
+                    <Button
+                      variant={viewMode === 'predictions' ? 'default' : 'ghost'}
+                      onClick={() => setViewMode('predictions')}
+                      iconName="TrendingUp"
+                      size="sm"
+                    >
+                      Análisis Predictivo
+                    </Button>
+                  </div>
+
+                  <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+                    <Icon name="Filter" size={16} />
+                    <span>
+                      {Object.keys(activeFilters)?.filter(key =>
+                        activeFilters?.[key] &&
+                        (Array.isArray(activeFilters?.[key]) ? activeFilters?.[key]?.length > 0 : activeFilters?.[key] !== 'all')
+                      )?.length} filtros activos
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+
+              {viewMode === 'timeline' && (
+                <TimelineVisualization
+                  tasks={tasksData}
+                  onTaskClick={handleTaskClick}
+                  onZoomChange={handleZoomChange}
+                />
+              )}
+
+              {viewMode === 'grid' && (
+                <TaskDataGrid
+                  tasks={tasksData}
+                  onTaskEdit={handleTaskEdit}
+                  onBulkAction={handleBulkAction}
+                  onTaskClick={handleTaskClick}
+                />
+              )}
+
+              {viewMode === 'predictions' && (
+                <PredictiveAnalytics
+                  tasks={tasksData}
+                  onPredictionClick={handlePredictionClick}
+                />
+              )}
+              {/* Additional Data Grid (when not in grid view mode) */}
+              {viewMode !== 'grid' && (
+                <TaskDataGrid
+                  tasks={tasksData}
+                  onTaskEdit={handleTaskEdit}
+                  onBulkAction={handleBulkAction}
+                  onTaskClick={handleTaskClick}
+                />
+              )}
+            </div>
+
+            {/* Right Sidebar - Task Queue */}
+            <div className="lg:col-span-4">
+              <TaskQueue
+                tasks={tasksData}
+                onTaskAction={handleTaskAction}
+                onTaskClick={handleTaskClick}
+              />
+            </div>
+          </div>
+
+
+
+          {/* Loading Overlay */}
+          {isLoading && (
+            <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center">
+              <div className="bg-surface border border-border rounded-lg p-6 shadow-modal">
+                <div className="flex items-center space-x-3">
+                  <Icon name="Loader2" size={20} className="animate-spin" />
+                  <span className="text-foreground">Actualizando datos...</span>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </main>
     </div>
   );
 };
 
-export default DashboardHome;
+export default TaskAnalyticsCenter;

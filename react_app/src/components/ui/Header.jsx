@@ -8,7 +8,7 @@ const Header = ({ className = '' }) => {
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const user = sessionStorage.getItem("user");
   const cargo = sessionStorage.getItem("cargo");
-  
+  const alertCount = 5;
   // Refs para detectar clics fuera
   const menuRef = useRef(null);
   const notiRef = useRef(null);
@@ -164,9 +164,36 @@ const Header = ({ className = '' }) => {
             </Button>
             
             {isNotiOpen && (
-              <div className="absolute right-0 top-full mt-2 mr-2 bg-popover border border-border rounded-lg shadow-brand-hover animate-scale-in">
-                <div className="py-2">
-                  <NotificationsCard />
+              <div className="absolute right-0 top-full mt-2 w-80 bg-popover border border-border rounded-lg shadow-modal z-50">
+                <div className="p-4 border-b border-border">
+                  <h3 className="font-medium text-foreground">Notificaciones</h3>
+                </div>
+                <div className="max-h-96 overflow-y-auto">
+                  {alertCount > 0 ? (
+                    <div className="p-4 space-y-3">
+                      <div className="flex items-start space-x-3 p-3 bg-error/5 rounded-lg">
+                        <Icon name="AlertTriangle" size={16} color="var(--color-error)" />
+                        <div className="flex-1">
+                          <p className="text-sm font-medium text-foreground">Sistema crítico</p>
+                          <p className="text-xs text-muted-foreground">Rendimiento del servidor por debajo del umbral</p>
+                          <p className="text-xs text-muted-foreground mt-1">Hace 5 minutos</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-3 p-3 bg-warning/5 rounded-lg">
+                        <Icon name="Clock" size={16} color="var(--color-warning)" />
+                        <div className="flex-1">
+                          <p className="text-sm font-medium text-foreground">Tarea retrasada</p>
+                          <p className="text-xs text-muted-foreground">Proyecto Alpha excede tiempo estimado</p>
+                          <p className="text-xs text-muted-foreground mt-1">Hace 15 minutos</p>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="p-8 text-center">
+                      <Icon name="Check" size={24} color="var(--color-success)" className="mx-auto mb-2" />
+                      <p className="text-sm text-muted-foreground">No hay notificaciones nuevas</p>
+                    </div>
+                  )}
                 </div>
               </div>
             )}
