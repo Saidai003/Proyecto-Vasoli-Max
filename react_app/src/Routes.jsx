@@ -15,7 +15,7 @@ import FormBuilder from './pages/form-builder/Index.jsx';
 import FormRenderer from './pages/form-renderer/Index.jsx';
 import Users from './pages/users/Index.jsx';
 import Operationcenter from './pages/Centro-de-operaciones/Index.jsx';
-
+import PerformanceAnalytics from './pages/Analisis-de-rendimiento/Index.jsx';
 import Home from './clientPages/home/Index.jsx';
 import FormList from './clientPages/FormList/Index.jsx';
 import Form from './clientPages/formulario/Index.jsx';
@@ -54,7 +54,9 @@ const Routes = () => {
           <Route path="/dashboard-home" element={<ProtectedRoute> <DashboardHome /> </ProtectedRoute>}/>
           <Route path="/request-tracking" element={<ProtectedRoute> <RequestTracking /> </ProtectedRoute>}/>
           <Route path="/support-portal" element={<ProtectedRoute> <DashboardHome /> </ProtectedRoute>}/>
+          <Route path="/analisis-rendimiento" element={<ProtectedRoute> <PerformanceAnalytics /> </ProtectedRoute>}/>
 
+            
           {/* Rutas libres */}
           <Route path="*" element={<NotFound />} />
         </RouterRoutes>
