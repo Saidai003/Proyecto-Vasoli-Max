@@ -19,6 +19,8 @@ import PerformanceAnalytics from './pages/Analisis-de-rendimiento/Index.jsx';
 import Home from './clientPages/home/Index.jsx';
 import FormList from './clientPages/FormList/Index.jsx';
 import Form from './clientPages/gestion/Index.jsx';
+import DashboardGestiones from "./pages/dashboard-gestiones/DashboardGestiones.jsx";
+import GestionDetalle from "./pages/gestion/GestionDetalle.jsx";
 
 
 
@@ -55,6 +57,8 @@ const Routes = () => {
           <Route path="/request-tracking" element={<ProtectedRoute> <RequestTracking /> </ProtectedRoute>}/>
           <Route path="/support-portal" element={<ProtectedRoute> <DashboardHome /> </ProtectedRoute>}/>
           <Route path="/analisis-rendimiento" element={<ProtectedRoute> <PerformanceAnalytics /> </ProtectedRoute>}/>
+          <Route path="/dashboard-gestiones" element={<ProtectedRoute> <DashboardGestiones /> </ProtectedRoute>}/>
+          <Route path="/gestion/:id" element={<ProtectedRoute> <GestionDetalle /> </ProtectedRoute>}/>
 
             
           {/* Rutas libres */}

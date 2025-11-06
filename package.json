@@ -1,0 +1,26 @@
+{
+  "name": "vasoliproyect",
+  "version": "1.0.0",
+  "description": "proyecto vaoliproyect",
+  "keywords": [
+    "repositorio",
+    "vasoli",
+    "proyect",
+    "proyecto"
+  ],
+  "homepage": "https://github.com/javierITB/VasoliProyect#readme",
+  "bugs": {
+    "url": "https://github.com/javierITB/VasoliProyect/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javierITB/VasoliProyect.git"
+  },
+  "license": "ISC",
+  "author": "max",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "test command"
+  }
+}
